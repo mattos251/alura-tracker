@@ -1,23 +1,26 @@
 <template>
-  <main class="columns is-gapless is-multiline" :class="{ 'modo-escuro': modoEscuroAtivo }">
-    <div class="column is-one-quarter">
-      <BarraLateral @aoTemaAlterado="trocarTema"/>
+  <div>
+    <Formulario @aoSalvarTarefa="salvarTarefa" />
+    <div class="lista">
+      <Tarefa v-for="(tarefa, index) in tarefas" :key="index" :tarefa="tarefa" />
+      <Box v-if="listaEstaVazia"> Você não está muito produtivo hoje :( </Box>
     </div>
-    <div class="column is-three-quarter conteudo">
-      
-    </div>
-  </main>
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import BarraLateral from './components/BarraLateral.vue'
-import ITarefa from './interfaces/ITarefa'
+import Formulario from '../components/Formulario.vue';
+import Tarefa from '../components/Tarefa.vue';
+import Box from '../components/Box.vue';
+import ITarefa from '../interfaces/ITarefa';
 
 export default defineComponent({
   name: 'App',
   components: {
-    BarraLateral,
+    Formulario,
+    Tarefa,
+    Box
   },
   data () {
     return {
@@ -57,3 +60,4 @@ main.modo-escuro {
   background-color: var(--bg-primario);
 }
 </style>
+

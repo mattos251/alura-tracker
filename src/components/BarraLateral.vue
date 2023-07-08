@@ -1,14 +1,14 @@
 <template>
   <header>
       <h1>
-        <img src="../assets/logo.png" alt="">  
+        <img src="../assets/img.png" alt="" class="logo">  
       </h1>
 
-      <div class="has-text-centered">
+      <!-- <div class="has-text-centered">
         <button class="button" @click="alterarTema">
           {{ textoBotao }}
         </button>
-      </div>
+      </div> -->
 
       <nav class="panel mt-5">
         <ul>
@@ -62,7 +62,8 @@ export default defineComponent({
 <style scoped>
 header {
   padding: 1rem;
-  background: #0d3b66;
+  background: black;
+  /* background: #0d3b66; */
   width: 100%;
   height: 100vh;
   text-align: center;
@@ -74,9 +75,14 @@ header {
   }
 }
 
+.logo{
+  border-radius: 20px;
+}
 
 .panel li {
-    margin: 8px 0;
+  display: flex;  
+  margin: 8px 0;
+
 }
 .link {
     color: #fff;

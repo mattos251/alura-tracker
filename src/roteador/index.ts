@@ -14,9 +14,6 @@ const rotas: RouteRecordRaw[] = [
         name: 'projetos',
         component: Projetos
     }
-
-
-
 ]
 
 

@@ -9,14 +9,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import Formulario from '../components/Formulario.vue';
-import Tarefa from '../components/Tarefa.vue';
-import Box from '../components/Box.vue';
-import ITarefa from '../interfaces/ITarefa';
+import { defineComponent } from 'vue'
+import Formulario from '../components/Formulario.vue'
+import Tarefa from '../components/Tarefa.vue'
+import Box from '../components/Box.vue'
+import ITarefa from '../interfaces/ITarefa'
 
 export default defineComponent({
-  name: 'App',
+  name: 'Tarefas',
   components: {
     Formulario,
     Tarefa,
@@ -24,8 +24,7 @@ export default defineComponent({
   },
   data () {
     return {
-      tarefas: [] as ITarefa[],
-      modoEscuroAtivo: false
+      tarefas: [] as ITarefa[]
     }
   },
   computed: {
@@ -37,9 +36,6 @@ export default defineComponent({
     salvarTarefa (tarefa: ITarefa) {
       this.tarefas.push(tarefa)
     },
-    trocarTema (modoEscuroAtivo: boolean) {
-      this.modoEscuroAtivo = modoEscuroAtivo
-    }
   }
 });
 </script>

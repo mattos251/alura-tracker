@@ -4,7 +4,7 @@
       <BarraLateral @aoTemaAlterado="trocarTema"/>
     </div>
     <div class="column is-three-quarter conteudo">
-      
+      <Router-View></Router-View>
     </div>
   </main>
 </template>
@@ -12,7 +12,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import BarraLateral from './components/BarraLateral.vue'
-import ITarefa from './interfaces/ITarefa'
 
 export default defineComponent({
   name: 'App',
@@ -21,19 +20,10 @@ export default defineComponent({
   },
   data () {
     return {
-      tarefas: [] as ITarefa[],
       modoEscuroAtivo: false
     }
   },
-  computed: {
-    listaEstaVazia () : boolean {
-      return this.tarefas.length === 0
-    }
-  },
   methods: {
-    salvarTarefa (tarefa: ITarefa) {
-      this.tarefas.push(tarefa)
-    },
     trocarTema (modoEscuroAtivo: boolean) {
       this.modoEscuroAtivo = modoEscuroAtivo
     }

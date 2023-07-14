@@ -27,15 +27,15 @@ export default defineComponent({
       tarefas: [] as ITarefa[]
     }
   },
-  computed: {
-    listaEstaVazia () : boolean {
-      return this.tarefas.length === 0
-    }
-  },
   methods: {
     salvarTarefa (tarefa: ITarefa) {
       this.tarefas.push(tarefa)
     },
+  },
+  computed: {
+    listaEstaVazia () : boolean {
+      return this.tarefas.length === 0
+    }
   }
 });
 </script>

@@ -78,4 +78,9 @@ export default defineComponent({
   color: var(--texto-primario);
   background-color: var(--bg-primario);
 }
+
+select{
+  width: 50vh;
+}
+
 </style>
